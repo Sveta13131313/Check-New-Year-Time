@@ -13,8 +13,26 @@
             color:white;
             font-weight: bold;
             font-size: 25px;
-           
         }
+
+        a.button {
+  display: inline-block;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  user-select: none;
+  padding: .5em 2em;
+  outline: none;
+  border: 2px solid;
+  border-radius: 1px;
+  transition: 0.2s;
+} 
+a.button:hover { background: rgba(255,255,255,.2); }
+a.button:active { background: white; }
+
+.snowFlake{
+    position: relative;
+}
     </style>
 </head>
 <body>
@@ -24,6 +42,23 @@
         <h2 id="time"></h2>
         <h2 id="newYear"></h2>
     </div>
-    <script src="script/script.js"></script>
+    <a href="#" class="goSnow button">
+        Запустить снежок
+        </a>
+        <a href="#" class="resetSnow button">
+            Перезапустить снежок
+            </a>
+    <div class="snowFlake">
+    <img width="3%" src="https://pngicon.ru/file/uploads/snejinka.png">
+    <img width="3%" src="https://pngicon.ru/file/uploads/snejinka.png">
+    <img width="3%" src="https://pngicon.ru/file/uploads/snejinka.png">
+    <img width="3%" src="https://pngicon.ru/file/uploads/snejinka.png">
+    <img width="3%" src="https://pngicon.ru/file/uploads/snejinka.png">
+    <img width="3%" src="https://pngicon.ru/file/uploads/snejinka.png">
+    <img width="3%" src="https://pngicon.ru/file/uploads/snejinka.png">
+    <img width="3%" src="https://pngicon.ru/file/uploads/snejinka.png">
+    </div>
+    
+        <script src="script/script.js"></script>
 </body>
 </html>

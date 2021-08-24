@@ -58,4 +58,41 @@ window.addEventListener('DOMContentLoaded', () => {
     let timer = getTimerRemaining('01 January 2022');
     newYear.textContent = `До нового года осталось ${timer.day} дней`;
     countTimer();
+
+    //Анимация снежинок
+    const letSnow = () => {
+        const snowFlake = document.querySelector('.snowFlake'),
+            btnGoShow = document.querySelector('.goSnow'),
+            btnResetShow = document.querySelector('.resetSnow');
+            let flyInterval;
+            let count = 0;
+        const flyAnimate = function () {
+            flyInterval = requestAnimationFrame(flyAnimate);
+            count++;
+            if (count <150) {
+                snowFlake.style.top= count * 2 + 'px';
+            } else {
+                cancelAnimationFrame(flyInterval);
+            }
+        };
+
+        let animate = false;
+        btnGoShow.addEventListener('click', () => {
+            if (!animate) {
+                    flyInterval = requestAnimationFrame(flyAnimate);
+                    animate = true;
+            }
+            else {
+                animate = false;
+                cancelAnimationFrame(flyInterval);
+            }
+        });
+        btnResetShow.addEventListener('click', () => {
+            animate = false;
+                cancelAnimationFrame(flyInterval);
+                snowFlake.style.top= 0+ 'px';
+                count=0;
+        });
+    };
+   letSnow();
 });
